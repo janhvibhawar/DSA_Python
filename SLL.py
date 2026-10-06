@@ -18,12 +18,15 @@ class Linkedlist:
             temp.next = new_node
     def print(self):
         cnt = 0
+        sum = 0
         temp = self.head
         while temp:
             print(temp.data)
             cnt+=1
+            sum+=temp.data
             temp = temp.next
         print("Number of nodes:", cnt)
+        print("Sum of all nodes:", sum)
 
 list = Linkedlist()
 n1 = Node(10)
