@@ -8,6 +8,7 @@ class Node:
 class Linkedlist:
     def __init__(self):
         self.head = None
+
     def append(self, new_node):
         if (self.head == None):
             self.head = new_node
@@ -16,17 +17,15 @@ class Linkedlist:
             while(temp.next):
                 temp = temp.next
             temp.next = new_node
+
     def print(self):
         cnt = 0
-        sum = 0
         temp = self.head
         while temp:
             print(temp.data)
             cnt+=1
-            sum+=temp.data
             temp = temp.next
         print("Number of nodes:", cnt)
-        print("Sum of all nodes:", sum)
 
 list = Linkedlist()
 n1 = Node(10)
