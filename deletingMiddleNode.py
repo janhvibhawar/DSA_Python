@@ -94,39 +94,40 @@ class LinkedList:
             if prev:
                 temp = prev.next
 
-list = LinkedList()
 
-n1 = Node(20)
-n2 = Node(30)
-n3 = Node(50)
-n4 = Node(60)
-n5 = Node(70)
-n6 = Node(80)
-n7 = Node(90)
+list1 = LinkedList()
 
-list.append(n1)
-list.append(n2)
-list.append(n3)
-list.append(n4)
-list.append(n5)
-list.append(n6)
-list.append(n7)
+n1 = Node(10)
+n2 = Node(20)
+n3 = Node(30)
+n4 = Node(40)
+n5 = Node(50)
+
+list1.append(n1)
+list1.append(n2)
+list1.append(n3)
+list1.append(n4)
+list1.append(n5)
+
 
 print("Original List:")
-list.print()
+list1.print()
 
-list.findmid_del()
+print("Second List")
+list2.print()
+
+list1.findmid_del()
 print("After deleting middle node:")
-list.print()
+list1.print()
 
-list.reverse()
+list1.reverse()
 print("Reversed List:")
-list.print()
+list1.print()
 
-list.delfirst_last()
+list1.delfirst_last()
 print("After deleting first and last nodes:")
-list.print()
+list1.print()
 
-list.delalternate_nodes()
+list1.delalternate_nodes()
 print("After deleting alternate nodes:")
-list.print()
+list1.print()
