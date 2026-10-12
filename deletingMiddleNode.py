@@ -80,9 +80,19 @@ class LinkedList:
 
 
     def delalternate_nodes(self):
+        prev=self.head
+        temp=self.head.next
+
         if self.head is None:
             print("List is empty")
             return
+
+        while temp and prev:
+            prev.next = temp.next
+            temp=None #delete node
+            prev = prev.next
+            if prev:
+                temp = prev.next
 
 list = LinkedList()
 
@@ -115,4 +125,8 @@ list.print()
 
 list.delfirst_last()
 print("After deleting first and last nodes:")
+list.print()
+
+list.delalternate_nodes()
+print("After deleting alternate nodes:")
 list.print()
