@@ -9,14 +9,13 @@ class LinkedList:
         self.head=None
 
     def append(self,new_node):
-        if self.head==None:
+        if self.head is None:
             self.head=new_node
             new_node.next = self.head
-
         else:
             temp=self.head
 
-            while(temp.next!=self.head):
+            while temp.next!=self.head:
                 temp=temp.next
             temp.next=new_node 
             new_node.next=self.head
@@ -34,6 +33,7 @@ class LinkedList:
 
          else:#insert node from 2nd to last position
              p=1
+             temp=self.head
 
              while(p!=pos-1):
                 temp=temp.next
@@ -43,7 +43,22 @@ class LinkedList:
              temp.next=new_node 
 
     def delete(self, value):
-        temp=None
+        temp=self.head
+        prev=None
+        if temp.data==value:
+            while(temp.next!=self.head):
+                temp=temp.next
+            self.head=self.head.next
+            temp.next=self.head
+        else:
+            while(temp.data!=value and temp):
+                prev=temp
+                temp=temp.next
+                if temp==self.head:
+                    print("Value is not present in the list")
+                    return
+            prev.next=temp.next
+            temp=None
 
     def print(self):
         print()
@@ -66,4 +81,7 @@ list.append(n2)
 list.append(n3)
 
 list.append(Node(40))
+list.insert(Node(38),2)
+list.delete(38)
 list.print()            
+
