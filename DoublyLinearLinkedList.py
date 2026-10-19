@@ -48,7 +48,6 @@ class LinkedList:
             temp = temp.prev
         print()
 
-
     def print(self):
         temp=self.head
         print("List elements:")
