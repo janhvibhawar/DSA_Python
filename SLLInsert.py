@@ -23,12 +23,16 @@ class LinkedList:
             new_node.next=self.head
             self.head=new_node
          else:
-             p=1
-             while(p!=pos-1):
-              temp=temp.next
-              p+=1
-             new_node.next=temp.next
-             temp.next=new_node 
+            temp=self.head
+            p=1
+            while p!=pos-1 and temp is not None:
+                temp=temp.next
+                p+=1
+            if temp is not None:
+                new_node.next=temp.next
+                temp.next=new_node 
+            else:
+                print("Position out of bounds")
 
 
     def print(self):
