@@ -83,7 +83,7 @@ class LinkedList:
         print(f"List of elements after deletion of {value}:")
         temp.prev.next = temp.next
         if temp.next: # If it's not the last node
-            temp.next.prev = temp.prev\
+            temp.next.prev = temp.prev
 
     def count_occ(self,num):
         temp = self.head
@@ -93,6 +93,19 @@ class LinkedList:
                 cnt+=1
             temp = temp.next
         print("The occurence of element", cnt)
+
+    def swap(self):
+        temp=node1=self.head #node1 is first node 
+
+        while(temp.next): # temp is last node
+            temp=temp.next
+
+        temp.next = node1.next
+        node1.next = None
+        node1.prev = temp.prev
+        temp.prev.next=node1
+        temp.prev = None
+        self.head = temp
 
     def print(self):
         temp = self.head
@@ -123,5 +136,7 @@ list.delete(40)
 list.print()
 
 list.reverse()
-
+list.swap()
+list.print()
 list.count_occ(10)
+
