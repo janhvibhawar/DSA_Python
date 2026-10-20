@@ -17,26 +17,37 @@ class LinkedList:
             temp.next=new_node 
 
     def del_node(self,val):
+        if self.head is None:
+            print("List is empty")
+            return
+        
         temp=self.head
-        prev=None
+        prev=None 
+
+        #check if head node holds the key to be deleted
         if temp.data==val:
             self.head=self.head.next
             return
+
+        #search for the key to be deleted
         while(temp):
             if temp.data==val:
                 break
-            else:   
-                prev=temp
-                temp=temp.next
-        if temp==None:
+            prev=temp
+            temp=temp.next
+
+        if temp is None:
             print("Value is not present in the list")
-        prev.next=temp.next            
+            return
+
+        prev.next = temp.next           
 
     def print(self):
         temp=self.head
         while temp:
-            print(temp.data)
+            print(temp.data,end="->")
             temp=temp.next
+        print("None")
 
 list=LinkedList()
 n1=Node(10)
